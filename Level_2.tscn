@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://CubePlayer.tscn" type="PackedScene" id=2]
+
+[node name="Level_2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0 )
+
+[node name="CubePlayer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156, 158 )
+
+[node name="Camera2D" type="Camera2D" parent="CubePlayer"]
+current = true
+limit_left = -256
+limit_top = -576
+limit_right = 2623
+limit_bottom = 960
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+drag_margin_bottom = 0.3
+editor_draw_limits = true
