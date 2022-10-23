@@ -1,17 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://CubePlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Area2D.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.5, 30.5 )
 
 [node name="Level_2" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
-format = 1
-tile_data = PoolIntArray( 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0 )
-
 [node name="CubePlayer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 156, 158 )
 
 [node name="Camera2D" type="Camera2D" parent="CubePlayer"]
 current = true
@@ -28,3 +26,21 @@ drag_margin_top = 0.3
 drag_margin_right = 0.3
 drag_margin_bottom = 0.3
 editor_draw_limits = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -262115, 2, 0, 851996, 2, 0, 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 983039, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917541, 0, 0, 917542, 0, 0, 917543, 0, 0, 917544, 0, 0 )
+
+[node name="flag" type="Area2D" parent="."]
+position = Vector2( -517, 959 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flag"]
+position = Vector2( 2337.5, -96.5 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="flag" to="flag" method="_on_flag_body_entered"]

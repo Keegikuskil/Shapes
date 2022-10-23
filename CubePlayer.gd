@@ -1,5 +1,4 @@
 extends KinematicBody2D
-
 enum States  {AIR = 1, FLOOR, WALL}
 var state = States.AIR
 const SPEED = 400
@@ -8,9 +7,17 @@ var velocity = Vector2(0,0)
 var direction = 1
 const JUMPFORCE = -1250
 const GRAVITY = 45
-
+const SQUARE = 1
+const TRIANGLE = 2
+var type = SQUARE or TRIANGLE
 #Repeats something
 func _physics_process(_delta):
+	#if type == SQUARE:
+		
+	#elif type == TRIANGLE:
+		#JUMPFORCE = -800
+	
+		
 	match state:
 		States.AIR:
 			if is_on_floor():
@@ -34,6 +41,8 @@ func _physics_process(_delta):
 		States.FLOOR:
 			if not is_on_floor():
 				state = States.AIR
+			#if Input.is_action_pressed("change"):
+				
 			if Input.is_action_pressed("Right"):
 				if Input.is_action_pressed("sprint"):
 					velocity.x = lerp(velocity.x,SPRINTSPEED,0.1)
@@ -82,6 +91,8 @@ func _physics_process(_delta):
 func set_direction():
 	direction = 1 if not $Sprite.flip_h else -1
 	$Wallchecker.rotation_degrees = 90 * -direction
+			
+
 			
 	
 	
