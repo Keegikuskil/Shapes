@@ -15,7 +15,7 @@ func _physics_process(_delta):
 	#if type == SQUARE:
 		
 	#elif type == TRIANGLE:
-		#JUMPFORCE = -800
+		
 	
 		
 	match state:

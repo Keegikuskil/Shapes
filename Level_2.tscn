@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://CubePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Area2D.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Backgrounds/landscape_rand1_0.png" type="Texture" id=4]
+[ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.5, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2339.25, 211.25 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 5 )
 
 [node name="Level_2" type="Node2D"]
 
@@ -30,10 +39,10 @@ editor_draw_limits = true
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( -262115, 2, 0, 851996, 2, 0, 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 983039, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917541, 0, 0, 917542, 0, 0, 917543, 0, 0, 917544, 0, 0 )
+tile_data = PoolIntArray( -262115, 2, 0, -196587, 0, 0, -196579, 0, 0, -131059, 0, 0, -131051, 0, 0, -131044, 0, 0, -131043, 0, 0, -131042, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65515, 0, 0, -65511, 0, 0, -65510, 0, 0, -65509, 0, 0, -65508, 0, 0, -65507, 0, 0, -65506, 0, 0, -65505, 0, 0, -65504, 0, 0, -65503, 0, 0, 65533, 0, 0, 3, 0, 0, 11, 0, 0, 12, 0, 0, 14, 0, 0, 15, 0, 0, 21, 0, 0, 131069, 0, 0, 65539, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65551, 0, 0, 65552, 0, 0, 65557, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131088, 0, 0, 131093, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196624, 0, 0, 196629, 0, 0, 262160, 0, 0, 262165, 0, 0, 262169, 0, 0, 262172, 0, 0, 327695, 0, 0, 327696, 0, 0, 327700, 0, 0, 327701, 0, 0, 327708, 0, 0, 393230, 0, 0, 393231, 0, 0, 393235, 0, 0, 393236, 0, 0, 393244, 0, 0, 458765, 0, 0, 458766, 0, 0, 458770, 0, 0, 458771, 0, 0, 458780, 0, 0, 524300, 0, 0, 524301, 0, 0, 524305, 0, 0, 524306, 0, 0, 524312, 0, 0, 524316, 0, 0, 589835, 0, 0, 589836, 0, 0, 589841, 0, 0, 589842, 0, 0, 589848, 0, 0, 655371, 0, 0, 655372, 0, 0, 655377, 0, 0, 655378, 0, 0, 655384, 0, 0, 720907, 0, 0, 720908, 0, 0, 720920, 0, 0, 786443, 0, 0, 786444, 0, 0, 851979, 0, 0, 851980, 0, 0, 851985, 0, 0, 851986, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0 )
 
 [node name="flag" type="Area2D" parent="."]
-position = Vector2( -517, 959 )
+position = Vector2( -455, -128 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -43,4 +52,31 @@ __meta__ = {
 position = Vector2( 2337.5, -96.5 )
 shape = SubResource( 1 )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 512, 274 )
+scale = Vector2( 4.31364, 3.7873 )
+texture = ExtResource( 4 )
+
+[node name="Fallzone" type="Area2D" parent="."]
+position = Vector2( 44, 77 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone"]
+position = Vector2( 1164.25, 1141.75 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1680.0
+margin_top = 687.0
+margin_right = 1882.0
+margin_bottom = 720.0
+rect_rotation = -33.0
+custom_fonts/font = SubResource( 3 )
+text = "Up Up"
+
 [connection signal="body_entered" from="flag" to="flag" method="_on_flag_body_entered"]
+[connection signal="body_entered" from="Fallzone" to="CubePlayer" method="_on_Fallzone_body_entered"]
