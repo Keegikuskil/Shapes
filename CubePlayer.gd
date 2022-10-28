@@ -16,7 +16,9 @@ var type = SQUARE
 func _physics_process(_delta):
 	
 	if type == SQUARE:
-		pass
+		JUMPFORCE = -1250
+		SPEED = 400
+		SPRINTSPEED = 700
 	if type == TRIANGLE:
 		JUMPFORCE = -1450
 		SPEED = 200
@@ -60,10 +62,10 @@ func _physics_process(_delta):
 			
 			
 			
-			if Input.is_action_just_pressed("change1"):
-				type == TRIANGLE
+			if Input.is_action_just_pressed("change1") and type == SQUARE:
+				type = TRIANGLE
 			elif Input.is_action_just_pressed("change1") and type == TRIANGLE:
-				type == SQUARE
+				type = SQUARE
 			
 			
 			
