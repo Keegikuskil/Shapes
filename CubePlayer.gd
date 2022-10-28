@@ -52,12 +52,11 @@ func _physics_process(_delta):
 				state = States.AIR
 			#if Input.is_action_pressed("change"):
 				
-			if Input.is_action_just_pressed("change1"):
+			if Input.is_action_just_pressed("change1") and JUMPFORCE == -1250:
 				JUMPFORCE = -1350
 				SPRINTSPEED = 400
 				SPEED = 200
-	
-			if Input.is_action_just_pressed("change2"):
+			elif Input.is_action_just_pressed("change1") and JUMPFORCE == -1350:
 				JUMPFORCE = -1250
 				SPRINTSPEED = 700
 				SPEED = 400
