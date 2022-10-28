@@ -11,7 +11,6 @@ const SQUARE = 1
 const TRIANGLE = 2
 var type = SQUARE
 
-
 #Repeats something
 func _physics_process(_delta):
 	
@@ -44,7 +43,10 @@ func _physics_process(_delta):
 			elif is_near_wall():
 				state = States.WALL
 				continue
-			$Sprite.play("air")
+			if type == SQUARE:
+				$Sprite.play("air")
+			else:
+				$Sprite.play("air2")
 			if Input.is_action_pressed("Right"):
 				velocity.x = lerp(velocity.x,SPEED,0.1) if velocity.x < SPEED else lerp(velocity.x,SPEED,0.03)
 				$Sprite.flip_h = false
@@ -69,36 +71,32 @@ func _physics_process(_delta):
 			
 			
 			
-			#if Input.is_action_pressed("change"):
-				
-			#if Input.is_action_just_pressed("change1"): #and JUMPFORCE == -1250:
-				#JUMPFORCE = -1350
-				#SPRINTSPEED = 400
-				#SPEED = 200
-			#elif Input.is_action_just_pressed("change1"): #and JUMPFORCE == -1350:
-				#JUMPFORCE = -1250
-				#SPRINTSPEED = 700
-				#SPEED = 400
-				#plaan B
-			
 			
 			if Input.is_action_pressed("Right"):
 				if Input.is_action_pressed("sprint"):
 					velocity.x = lerp(velocity.x,SPRINTSPEED,0.1)
 				else:
 					velocity.x = lerp(velocity.x,SPEED,0.1)
-				
-				$Sprite.play("move")
+				if type == SQUARE:
+					$Sprite.play("move")
+				else:
+					$Sprite.play("move2")
 				$Sprite.flip_h = false
 			elif Input.is_action_pressed("left"):
 				if Input.is_action_pressed("sprint"):
 					velocity.x = lerp(velocity.x,-SPRINTSPEED,0.1)
 				else:
 					velocity.x = lerp(velocity.x,-SPEED,0.1)
-				$Sprite.play("move")
+				if type == SQUARE:
+					$Sprite.play("move")
+				else:
+					$Sprite.play("move2")
 				$Sprite.flip_h = true
 			else:
-				$Sprite.play("idle")
+				if type == SQUARE:
+					$Sprite.play("idle")
+				else:
+					$Sprite.play("idle2")
 				velocity.x = lerp(velocity.x,0,0.2)
 			if Input.is_action_just_pressed("jump") and is_on_floor():
 				velocity.y = JUMPFORCE
@@ -142,7 +140,8 @@ func set_direction():
 
 
 func is_near_wall():
-	return $Wallchecker.is_colliding()
+	if type == SQUARE:
+		return $Wallchecker.is_colliding()
 
 func move_and_fall(slow_fall: bool):
 	velocity.y = velocity.y + GRAVITY

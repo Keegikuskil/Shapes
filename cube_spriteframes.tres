@@ -1,8 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=2]
+[gd_resource type="SpriteFrames" load_steps=6 format=2]
 
 [ext_resource path="res://Assets/PersonalPlayer-spritesCube/uuskuubik.png" type="Texture" id=1]
 [ext_resource path="res://Assets/PersonalPlayer-spritesCube/New Piskel.png" type="Texture" id=2]
 [ext_resource path="res://Assets/PersonalPlayer-spritesCube/oihuuskuubik).png" type="Texture" id=3]
+[ext_resource path="res://Assets/PersonalPlayer-spritesTriangle/kolmnurktegelane.png" type="Texture" id=4]
+[ext_resource path="res://Assets/PersonalPlayer-spritesTriangle/kolmnurkparemale.png" type="Texture" id=5]
 
 [resource]
 animations = [ {
@@ -11,13 +13,28 @@ animations = [ {
 "name": "air",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "air2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "idle2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "move",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "move2",
 "speed": 5.0
 } ]
