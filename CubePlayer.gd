@@ -15,7 +15,14 @@ var type = SQUARE
 #Repeats something
 func _physics_process(_delta):
 	
-	
+	if type == SQUARE:
+		pass
+	if type == TRIANGLE:
+		JUMPFORCE = -1450
+		SPEED = 200
+		SPRINTSPEED = 400
+		
+		
 	
 	
 	
@@ -50,16 +57,27 @@ func _physics_process(_delta):
 		States.FLOOR:
 			if not is_on_floor():
 				state = States.AIR
+			
+			
+			
+			if Input.is_action_just_pressed("change1"):
+				type == TRIANGLE
+			elif Input.is_action_just_pressed("change1") and type == TRIANGLE:
+				type == SQUARE
+			
+			
+			
 			#if Input.is_action_pressed("change"):
 				
-			if Input.is_action_just_pressed("change1") and JUMPFORCE == -1250:
-				JUMPFORCE = -1350
-				SPRINTSPEED = 400
-				SPEED = 200
-			elif Input.is_action_just_pressed("change1") and JUMPFORCE == -1350:
-				JUMPFORCE = -1250
-				SPRINTSPEED = 700
-				SPEED = 400
+			#if Input.is_action_just_pressed("change1"): #and JUMPFORCE == -1250:
+				#JUMPFORCE = -1350
+				#SPRINTSPEED = 400
+				#SPEED = 200
+			#elif Input.is_action_just_pressed("change1"): #and JUMPFORCE == -1350:
+				#JUMPFORCE = -1250
+				#SPRINTSPEED = 700
+				#SPEED = 400
+				#plaan B
 			
 			
 			if Input.is_action_pressed("Right"):
