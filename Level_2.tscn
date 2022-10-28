@@ -79,6 +79,16 @@ rect_rotation = -33.0
 custom_fonts/font = SubResource( 3 )
 text = "Up Up"
 
+[node name="Label2" type="Label" parent="."]
+margin_left = 1116.0
+margin_top = 29.0
+margin_right = 1318.0
+margin_bottom = 80.0
+rect_rotation = -33.0
+custom_fonts/font = SubResource( 3 )
+text = "Down Down
+"
+
 [connection signal="body_entered" from="flag" to="CubePlayer" method="_on_flag_body_entered"]
 [connection signal="body_entered" from="flag" to="flag" method="_on_flag_body_entered"]
 [connection signal="body_entered" from="Fallzone" to="CubePlayer" method="_on_Fallzone_body_entered"]
