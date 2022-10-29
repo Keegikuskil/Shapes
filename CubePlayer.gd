@@ -10,18 +10,21 @@ const GRAVITY = 45
 const SQUARE = 1
 const TRIANGLE = 2
 var type = SQUARE
+var time = 0
 
-#Repeats something
+func _ready():
+	time = 0
+
 func _physics_process(_delta):
 	
 	if type == SQUARE:
 		JUMPFORCE = -1250
-		SPEED = 400
-		SPRINTSPEED = 700
+		SPEED = 500
+		SPRINTSPEED = 800
 	if type == TRIANGLE:
 		JUMPFORCE = -1450
-		SPEED = 200
-		SPRINTSPEED = 400
+		SPEED = 300
+		SPRINTSPEED = 500
 		
 		
 	
@@ -157,5 +160,3 @@ func _on_Fallzone_body_entered(_body):
 	
 
 
-func _on_flag_body_entered(_body):
-	var _x=get_tree().change_scene("res://Level_" + str(int(get_tree().current_scene.name) + 1) + ".tscn")

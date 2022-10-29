@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://CubePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Area2D.gd" type="Script" id=3]
 [ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Backgrounds/landscape_rand1_0.png" type="Texture" id=5]
+[ext_resource path="res://TextOnScreen.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2339.25, 211.25 )
@@ -20,6 +26,23 @@ font_data = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
+
+[node name="TextOnScreen" type="Label" parent="."]
+margin_left = 226.0
+margin_top = 508.0
+margin_right = 540.0
+margin_bottom = 593.0
+custom_fonts/font = SubResource( 4 )
+text = "010101"
+script = ExtResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 505.795, 337.006 )
+scale = Vector2( 4.31364, 3.7873 )
+texture = ExtResource( 5 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -93,13 +116,6 @@ rect_rotation = -19.8
 custom_fonts/font = SubResource( 3 )
 text = "Hit the flag to finish
 "
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 505.795, 337.006 )
-scale = Vector2( 4.31364, 3.7873 )
-texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="Fallzone" to="CubePlayer" method="_on_Fallzone_body_entered"]
 [connection signal="body_entered" from="flag" to="flag" method="_on_flag_body_entered"]
