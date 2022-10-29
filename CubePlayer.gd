@@ -22,7 +22,7 @@ func _physics_process(_delta):
 		SPEED = 500
 		SPRINTSPEED = 800
 	if type == TRIANGLE:
-		JUMPFORCE = -1450
+		JUMPFORCE = -1500
 		SPEED = 300
 		SPRINTSPEED = 500
 		
