@@ -4,4 +4,4 @@ var x
 
 
 func _on_Button_pressed():
-	x=get_tree().change_scene("res://Level1.tscn")
+	x=get_tree().change_scene("res://Levels1-10.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://tryagain.gd" type="Script" id=3]
@@ -12,6 +12,12 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=3]
 size = 19
 font_data = ExtResource( 2 )
+
+[sub_resource type="InputEventAction" id=4]
+action = "ui_accept"
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
 
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
@@ -36,6 +42,7 @@ margin_top = 439.0
 margin_right = 845.0
 margin_bottom = 504.0
 custom_fonts/font = SubResource( 3 )
+shortcut = SubResource( 5 )
 text = "Restart game"
 flat = true
 script = ExtResource( 3 )

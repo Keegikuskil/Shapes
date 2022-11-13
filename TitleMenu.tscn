@@ -21,12 +21,12 @@ rect_rotation = -0.064392
 color = Color( 0.0862745, 0.541176, 0.490196, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 339.0
-margin_top = 112.0
-margin_right = 715.0
-margin_bottom = 334.0
+margin_left = 396.0
+margin_top = 114.0
+margin_right = 772.0
+margin_bottom = 336.0
 custom_fonts/font = SubResource( 1 )
-text = "Shapes"
+text = "Form"
 
 [node name="Button" type="Button" parent="."]
 margin_left = 335.0

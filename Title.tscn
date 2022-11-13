@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -11,6 +11,12 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 42
 font_data = ExtResource( 1 )
+
+[sub_resource type="InputEventAction" id=6]
+action = "ui_accept"
+
+[sub_resource type="ShortCut" id=7]
+shortcut = SubResource( 6 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -34,12 +40,13 @@ margin_bottom = 610.0
 color = Color( 0.0627451, 0.415686, 0.396078, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 313.0
-margin_top = 112.0
-margin_right = 679.0
-margin_bottom = 192.0
+margin_left = 367.0
+margin_top = 115.0
+margin_right = 733.0
+margin_bottom = 278.0
 custom_fonts/font = SubResource( 1 )
-text = "Shapes"
+text = "FORM
+"
 
 [node name="Playbutton" type="Button" parent="."]
 margin_left = 385.0
@@ -49,6 +56,7 @@ margin_bottom = 526.0
 custom_colors/font_color_hover = Color( 0.0235294, 0.0588235, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+shortcut = SubResource( 7 )
 text = "Play"
 flat = true
 script = ExtResource( 2 )
@@ -87,10 +95,9 @@ margin_bottom = 603.0
 custom_fonts/font = SubResource( 5 )
 text = "Move using:
 arrow keys or WASD
-Jump with:
-Spacebar
-Sprint using:
-ctrl
+Jump with Spacebar
+Sprint using ctr
+change character with Z
 
 You can slide on walls
 by jumping against them

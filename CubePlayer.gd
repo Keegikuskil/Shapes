@@ -160,3 +160,7 @@ func _on_Fallzone_body_entered(_body):
 	
 
 
+
+var x
+func _on_flag_body_entered(_body):
+	x=get_tree().change_scene("res://Levels1-10.tscn")
