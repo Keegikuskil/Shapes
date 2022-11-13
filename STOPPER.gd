@@ -1,5 +1,5 @@
 extends Label
-var time = 55
+var time = 0
 
 func _physics_process(_delta):
 	time += _delta
