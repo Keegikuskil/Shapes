@@ -1,9 +1,9 @@
 ## TODO
 
-- [ ] Timer 
+- [x] Timer 
 - [x] Level 1
-- [ ] Levelid 5-10
+- [x] Levelid 5-10
 - [ ] Scoreboard
-- [ ] Fix start screen
-- [ ] mängule nimi
+- [x] Fix start screen
+- [x] mängule nimi
 
