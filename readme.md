@@ -26,8 +26,3 @@ Created as a creative project (*loovtöö*).
 | Switch shape | `Z` |
 | Wall-jump | Hold `Space` while pressing away from the wall |
 
-## Project structure
-Shapes/
-  Assets/              # Sprites, tiles and other art
-  project.godot        # Godot project config (input map, autoloads, main scene)
-
