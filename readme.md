@@ -28,6 +28,6 @@ Created as a creative project (*loovtöö*).
 
 ## Project structure
 Shapes/
-├── Assets/              # Sprites, tiles and other art
-├── project.godot        # Godot project config (input map, autoloads, main scene)
+  Assets/              # Sprites, tiles and other art
+  project.godot        # Godot project config (input map, autoloads, main scene)
 
